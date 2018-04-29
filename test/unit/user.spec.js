@@ -1,10 +1,10 @@
 import CryptoJS from 'crypto-js'
-import { User}  from '../../src/entities/user'
+import { User } from '../../src/entities/user'
 
-define('User entity', () => {
-  it('should store hashes of passwords', () => {
-    const user = new User()
-    user.password = 'password'
-    expect(user.password).toBe(CryptoJS.SHA1('password'))
+describe('User entity', () => {
+  it('should store usernames and hashes of passwords', () => {
+    const user = new User('user', 'password')
+    expect(user.name).toBe('user')
+    expect(user.password).toEqual(`${CryptoJS.SHA1('password')}`)
   })
 })
