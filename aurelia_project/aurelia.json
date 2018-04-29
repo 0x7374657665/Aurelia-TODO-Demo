@@ -79,7 +79,12 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
-          "text"
+          "text",
+          {
+            "name": "crypto-js",
+            "path": "../node_modules/crypto-js",
+            "main": "crypto-js"
+          }
         ]
       }
     ],
