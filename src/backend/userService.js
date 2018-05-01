@@ -4,7 +4,18 @@ const _users = [
   new User('user', 'pass')
 ]
 
-const getUser = user => _users.find(u => u.name.toUpperCase() === user.name.toUpperCase())
+const getUser = user => {
+  let userToReturn = null
+  const searchResult = _users.find(
+    u => 
+    u.name.toUpperCase() === user.name.toUpperCase()
+    && u.password === user.password
+  )
+  if(searchResult) userToReturn = searchResult
+  return userToReturn
+  }
+
+
 
 export class UserService {
 

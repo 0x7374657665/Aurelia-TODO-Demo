@@ -36,6 +36,7 @@ describe('UserService', () => {
 
     expect(userSvc.authenticate('user', 'pass')).toEqual(user)
     expect(userSvc.authenticate('UsEr', 'pass')).toEqual(user)
-    expect(userSvc.authenticate('no such user', 'pass')).toBeUndefined()
+    expect(userSvc.authenticate('no such user', 'pass')).toBeNull()
+    expect(userSvc.authenticate('user', 'wrongpass')).toBeNull()
   })
 })

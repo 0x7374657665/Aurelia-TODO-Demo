@@ -1,20 +1,24 @@
 <template>
   <div class="uk-card uk-card-default uk-card-hover uk-position-center uk-width-1-2" id="login-card">
-    <form class="uk-margin uk-card-body">
+    <form class="uk-margin uk-card-body" submit.trigger="login()">
       <fieldset class="uk-fieldset">
-        <legend class="uk-legend">Login</legend>
+        <legend class="uk-legend">Aurelia Todo Demo</legend>
         <div class="uk-margin">
           <label class="uk-form-label" for="username-input">Username</label>
           <div class="uk-form-controls">
-            <input class="uk-input" id="username-input" type="text">
+            <input class="uk-input" id="username-input" type="text" value.bind="name">
           </div>
         </div>
         <div class="uk-margin">
           <label class="uk-form-label" for="password-input">Password</label>
           <div class="uk-form-controls">
-            <input class="uk-input" id="password-input" type="password">
+            <input class="uk-input" id="password-input" type="password" value.bind="password">
           </div>
         </div>
+        <button type="submit" class="uk-button uk-button-primary" disabled.bind="!name || !password">Login&nbsp;
+          <i uk-icon="sign-in"></i>
+        </button>
+        <span class="uk-text-danger uk-margin-left" show.bind="message">${message}</span>
       </fieldset>
     </form>
   </div>
