@@ -6265,6 +6265,10 @@ uuid@^3.0.0, uuid@^3.1.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
 
+uuidjs@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/uuidjs/-/uuidjs-4.0.3.tgz#4b4113a98e70507643a9a55a0493ff95b1d2538d"
+
 uws@~9.14.0:
   version "9.14.0"
   resolved "https://registry.yarnpkg.com/uws/-/uws-9.14.0.tgz#fac8386befc33a7a3705cbd58dc47b430ca4dd95"
