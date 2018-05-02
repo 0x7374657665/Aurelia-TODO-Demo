@@ -1,0 +1,27 @@
+<template>
+  <div id="new-todo-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+      <form>
+        <div class="uk-margin">
+          <label class="uk-form-label" for="new-todo-title">Title</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" id="new-todo-title" type="text">
+          </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label" for="new-todo-description">Description</label>
+          <div class="uk-form-controls">
+              <textarea class="uk-textarea" rows="5" id="#new-todo-description"></textarea>
+          </div>
+        </div>
+        <div class="uk-text-right">
+          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+          <button class="uk-button uk-button-primary" type="button">Create</button>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</template>

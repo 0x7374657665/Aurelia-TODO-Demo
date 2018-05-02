@@ -1,9 +1,16 @@
-<template class="uk-margin">
+<template>
   <div uk-grid>
-    <div>
-      <a class="uk-icon-button uk-child-width-expand@s uk-button-primary" uk-icon="plus"></a>
+    <div class="uk-align-center uk-width-auto">
+      <a 
+      click.trigger="newTodo()" 
+      class="uk-icon-button uk-child-width-expand@s uk-button-primary uk-margin-left"
+      href="#new-todo-modal"
+      uk-icon="plus" 
+      uk-tooltip="title: New TODO; pos: right; delay: 750"
+      uk-toggle
+      ></a>
     </div>
-    <div>
+    <div class="uk-width-expand">
       <ul>
         <li>item 1</li>
         <li>item 2</li>
@@ -11,4 +18,5 @@
       </ul>
     </div>
   </div>
+  <compose view="./newTodoModal/newTodoModal.html"></compose>
 </template>
