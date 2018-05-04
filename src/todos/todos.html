@@ -2,7 +2,6 @@
   <div uk-grid>
     <div class="uk-align-center uk-width-auto">
       <a 
-      click.trigger="newTodo()" 
       class="uk-icon-button uk-child-width-expand@s uk-button-primary uk-margin-left"
       href="#new-todo-modal"
       uk-icon="plus" 
@@ -11,12 +10,10 @@
       ></a>
     </div>
     <div class="uk-width-expand">
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
+      <ul repeat.for="todo of todos">
+        <li title.bind="todo.description">${todo.title}</li>
       </ul>
     </div>
   </div>
-  <compose view="./newTodoModal/newTodoModal.html"></compose>
+  <compose view-model="./newTodoModal/newTodoModal"></compose>
 </template>

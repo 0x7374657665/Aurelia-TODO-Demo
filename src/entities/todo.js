@@ -1,9 +1,9 @@
 import {Sequence} from '../resources/sequences/sequence'
 
 export class Todo {
-  constructor() {
+  constructor(title='', description='') {
     this.id = Sequence.next()
-    this.title = ''
-    this.description = ''
+    this.title = title
+    this.description = description
   }
 }

@@ -6,18 +6,19 @@
         <div class="uk-margin">
           <label class="uk-form-label" for="new-todo-title">Title</label>
           <div class="uk-form-controls">
-            <input class="uk-input" id="new-todo-title" type="text">
+            <input class="uk-input" id="new-todo-title" type="text" value.bind="title">
           </div>
         </div>
         <div class="uk-margin">
           <label class="uk-form-label" for="new-todo-description">Description</label>
           <div class="uk-form-controls">
-              <textarea class="uk-textarea" rows="5" id="#new-todo-description"></textarea>
+            <textarea class="uk-textarea" rows="5" id="#new-todo-description" value.bind="description"></textarea>
           </div>
         </div>
         <div class="uk-text-right">
           <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-          <button class="uk-button uk-button-primary" type="button">Create</button>
+          <button class="uk-button uk-button-primary" type="button" disabled show.bind="!title">Create</button>
+          <button class="uk-button uk-button-primary uk-modal-close" type="button" click.delegate="create()" hidden.bind="!title">Create</button>
         </div>
       </form>
 
