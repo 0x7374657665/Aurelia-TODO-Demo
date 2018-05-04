@@ -20,6 +20,8 @@ export class Login {
     let user = new this.userSvc.authenticate(this.name,this.password)
     if(user.name) {
       this.message=''
+      this.name = ''
+      this.password = ''
       this.aurelia.use.instance(User,user)
       this.aurelia.setRoot('shell/shell')
     } else {

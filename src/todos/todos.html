@@ -10,9 +10,9 @@
       ></a>
     </div>
     <div class="uk-width-expand">
-      <ul repeat.for="todo of todos">
-        <li title.bind="todo.description">${todo.title}</li>
-      </ul>
+      <div repeat.for="todo of todos" class="uk-margin">
+        <todo-card todo.bind="todo"></todo-card>
+      </div>
     </div>
   </div>
   <compose view-model="./newTodoModal/newTodoModal"></compose>
