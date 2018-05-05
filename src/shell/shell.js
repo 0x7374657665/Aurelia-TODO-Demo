@@ -13,6 +13,7 @@ export class Shell {
 
   configureRouter(config, router) {
     this.router = router
+    config.options.pushState = true //get rid of # in urls
     config.map(routes)
   }
 
