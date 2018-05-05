@@ -1,0 +1,13 @@
+<template>
+  <div uk-grid>
+    <div class="uk-align-center uk-width-auto">
+      <a class="uk-icon-button uk-child-width-expand@s uk-button-primary uk-margin-left" 
+      uk-icon="arrow-left"
+      click.delegate="router.navigateBack()"></a>
+    </div>
+    <div class="uk-width-expand">
+      <h1 class="uk-article-title">${todo.title}</h3>
+      <p class="uk-article-meta">${todo.description}</p>
+    </div>
+  </div>
+</template>

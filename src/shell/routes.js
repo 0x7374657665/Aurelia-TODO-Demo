@@ -8,7 +8,7 @@ export default [
   {
     name: 'todo',
     route: 'todo/:id',
-    moduleId: 'todo/todo',
+    moduleId: 'todo-details/todo-details',
     title: 'TODO'
   }
 ]

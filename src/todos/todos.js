@@ -15,13 +15,15 @@ export class Todos {
 
   activate() {
     this.todos = this.todoService.getTodos()
-    this.subscriptions.push(this.events.subscribe('todo:create', newTodo => {
-      this.todos.unshift(newTodo)
-    })
-  )
+    this.subscriptions.push(
+      this.events.subscribe('todo:added', todo => {
+        this.todos = this.todoService.getTodos()
+      })
+    )
   }
 
   detached() {
     this.subscriptions.forEach(sub => sub.dispose())
+    this.todos.forEach(this.todoService.merge)
   }
 }
