@@ -9,13 +9,19 @@ export class Todos {
   constructor(todoService, events) {
     this.todoService = todoService
     this.todos = []
+    this.subscriptions = []
     this.events = events
   }
 
   activate() {
     this.todos = this.todoService.getTodos()
-    this.events.subscribe('todo:create', newTodo => {
+    this.subscriptions.push(this.events.subscribe('todo:create', newTodo => {
       this.todos.unshift(newTodo)
     })
+  )
+  }
+
+  detached() {
+    this.subscriptions.forEach(sub => sub.dispose())
   }
 }
