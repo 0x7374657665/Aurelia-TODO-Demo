@@ -7,4 +7,8 @@ export class TodoListEntry {
   constructor() {
     this.editing = false
   }
+
+  addItem() {
+    console.log('adding')
+  }
 }

@@ -12,10 +12,15 @@ export class TodoDetails {
   constructor(todoService, router) {
     this.todoService = todoService,
     this.router = router
+    this.newTaskText = ''
   }
 
   activate(params) {
     this.todo = this.todoService.getTodo(params.id)
+  }
+
+  addItem() {
+    console.log('adding item:',arguments)
   }
 
 }

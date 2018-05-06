@@ -2,26 +2,22 @@
   <require from="../resources/elements/todo-list-entry/todo-list-entry"></require>
   <div uk-grid>
     <div class="uk-align-center uk-width-auto">
-      <a class="uk-icon-button uk-child-width-expand@s uk-button-primary uk-margin-left" 
-      uk-icon="arrow-left"
-      click.delegate="router.navigateBack()"></a>
+      <a class="uk-icon-button uk-child-width-expand@s uk-button-primary uk-margin-left" uk-icon="arrow-left" click.delegate="router.navigateBack()"></a>
     </div>
     <div class="uk-width-expand">
       <h1 class="uk-article-title">${todo.title}</h3>
-      <p class="uk-article-meta">${todo.description}</p>
-      <ul class="uk-list">
-        <template repeat.for="item of todo.todoItems">
+        <p class="uk-article-meta">${todo.description}</p>
+        <ul class="uk-list">
+          <template repeat.for="item of todo.todoItems">
+            <li>
+              <todo-list-entry todoItem="item"></todo-list-entry>
+            </li>
+          </template>
           <li>
-            <todo-list-entry todoItem="item"></todo-list-entry>
+              <a href="" class="uk-icon-button uk-button-primary uk-float-left" uk-icon="plus" click.delegate="addItem()"></a>
+              <input type="text" value.bind="newTaskText" class="uk-input uk-form-controls uk-float-left uk-width-1-2 uk-margin-left" placeholder="Add new task..." id="new-item-input">
           </li>
-        </template>
-        <li>
-          <div class="uk-inline">
-            <span class="uk-form-icon" uk-icon="plus"></span>
-            <input type="text" value.bind="todoItem.task" class="uk-input" placeholder="Add new task...">
-          </div>
-        </li>
-      </ul>
+        </ul>
     </div>
   </div>
 </template>
