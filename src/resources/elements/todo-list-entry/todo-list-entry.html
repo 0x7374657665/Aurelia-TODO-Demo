@@ -1,8 +1,8 @@
 <template>
-  <div hidden.bind="editing">
+  <div if.bind="!editing">
     <p class="uk-text-primary">${todoitem.task}</p>
   </div>
-  <div show.bind="editing">
+  <div if.bind="editing">
     <input type="text" value.bind="todoItem.task" class="uk-input">
   </div>
 </template>

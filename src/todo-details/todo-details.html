@@ -7,19 +7,27 @@
     <div class="uk-width-expand">
       <h1 class="uk-article-title">${todo.title}</h3>
         <p class="uk-article-meta">${todo.description}</p>
-        <ul class="uk-list">
-          <template repeat.for="item of todo.todoItems">
-            <li>
-              <todo-list-entry todoitem.bind="item"></todo-list-entry>
-            </li>
-          </template>
-          <li>
-            <form submit.delegate="addItem()">
-              <a href="" class="uk-icon-button uk-button-primary uk-float-left" uk-icon="plus" click.delegate="addItem()"></a>
-              <input type="text" value.bind="newTaskText" class="uk-input uk-form-controls uk-float-left uk-width-1-2 uk-margin-left" placeholder="Add new task...">
-            </form>
-          </li>
-        </ul>
+        <table class="uk-table uk-table-striped uk-table-middle uk-table-small">
+          <tbody>
+            <template repeat.for="item of todo.todoItems">
+              <tr>
+                <td>
+                  <todo-list-entry todoitem.bind="item"></todo-list-entry>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <form submit.delegate="addItem()">
+                  <a href="" class="uk-icon-button uk-button-primary uk-float-left" uk-icon="plus" click.delegate="addItem()"></a>
+                  <input type="text" value.bind="newTaskText" class="uk-input uk-form-controls uk-float-left uk-width-1-2 uk-margin-left" placeholder="Add new task...">
+                </form>
+              </td>
+            </tr>
+          </tfoot>
+          </ul>
     </div>
   </div>
 </template>
