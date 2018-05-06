@@ -5,5 +5,6 @@ export class Todo {
     this.id = Sequence.next()
     this.title = title
     this.description = description
+    this.todoItems = []
   }
 }

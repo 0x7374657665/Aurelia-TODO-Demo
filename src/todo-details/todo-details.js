@@ -2,6 +2,7 @@ import { bindable } from "aurelia-templating";
 import { TodoService } from "../backend/todoService";
 import { inject } from "aurelia-dependency-injection";
 import { Router } from "aurelia-router";
+import { TodoItem } from "../entities/todoItem";
 
 @inject(TodoService, Router)
 export class TodoDetails {
@@ -14,9 +15,7 @@ export class TodoDetails {
   }
 
   activate(params) {
-    console.log('activating:',params)
     this.todo = this.todoService.getTodo(params.id)
-    console.log('todo retrieved:',this.todo)
   }
 
 }

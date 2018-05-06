@@ -1,4 +1,5 @@
 <template>
+  <require from="../resources/elements/todo-list-entry/todo-list-entry"></require>
   <div uk-grid>
     <div class="uk-align-center uk-width-auto">
       <a class="uk-icon-button uk-child-width-expand@s uk-button-primary uk-margin-left" 
@@ -8,6 +9,19 @@
     <div class="uk-width-expand">
       <h1 class="uk-article-title">${todo.title}</h3>
       <p class="uk-article-meta">${todo.description}</p>
+      <ul class="uk-list">
+        <template repeat.for="item of todo.todoItems">
+          <li>
+            <todo-list-entry todoItem="item"></todo-list-entry>
+          </li>
+        </template>
+        <li>
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="plus"></span>
+            <input type="text" value.bind="todoItem.task" class="uk-input" placeholder="Add new task...">
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
