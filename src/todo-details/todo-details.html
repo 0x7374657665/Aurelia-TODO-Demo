@@ -10,12 +10,14 @@
         <ul class="uk-list">
           <template repeat.for="item of todo.todoItems">
             <li>
-              <todo-list-entry todoItem="item"></todo-list-entry>
+              <todo-list-entry todoitem.bind="item"></todo-list-entry>
             </li>
           </template>
           <li>
+            <form submit.delegate="addItem()">
               <a href="" class="uk-icon-button uk-button-primary uk-float-left" uk-icon="plus" click.delegate="addItem()"></a>
-              <input type="text" value.bind="newTaskText" class="uk-input uk-form-controls uk-float-left uk-width-1-2 uk-margin-left" placeholder="Add new task..." id="new-item-input">
+              <input type="text" value.bind="newTaskText" class="uk-input uk-form-controls uk-float-left uk-width-1-2 uk-margin-left" placeholder="Add new task...">
+            </form>
           </li>
         </ul>
     </div>

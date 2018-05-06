@@ -2,13 +2,10 @@ import { bindable } from "aurelia-templating";
 
 export class TodoListEntry {
 
-  @bindable todoItem
+  @bindable todoitem
 
   constructor() {
     this.editing = false
-  }
-
-  addItem() {
-    console.log('adding')
+    console.log('created todo list entry:', this)
   }
 }

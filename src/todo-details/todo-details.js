@@ -20,7 +20,12 @@ export class TodoDetails {
   }
 
   addItem() {
-    console.log('adding item:',arguments)
+    if(this.newTaskText) {
+      const todoItem = new TodoItem(this.newTaskText)
+      console.log('created todo item:',todoItem)
+      this.todo.todoItems.push(todoItem)
+      this.newTaskText = ''
+    }
   }
 
 }
