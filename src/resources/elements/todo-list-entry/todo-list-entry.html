@@ -1,8 +1,20 @@
 <template>
-  <div if.bind="!editing">
+  <div hidden.bind="editing" click.delegate="toggleEditing()">
     <p class="uk-text-primary">${todoitem.task}</p>
   </div>
-  <div if.bind="editing">
-    <input type="text" value.bind="todoItem.task" class="uk-input">
+  <div show.bind="editing" class="" uk-grid>
+    <div class="uk-width-5-6">
+      <input type="text" value.bind="updatedTaskText" class="uk-input">
+    </div>
+    <div class="uk-width-1-6">
+      <div uk-grid>
+        <div class="uk-width-1-6"><a 
+          click.delegate="updateTask()" 
+          disabled.bind="noVolatileUpdates()"
+          class="uk-icon-button uk-button-primary" 
+          uk-icon="check"></a></div>
+        <div class="uk-width-1-6"><a click.delegate="toggleEditing()" class="uk-icon-button uk-button-secondary" uk-icon="close"></a></div>
+      </div>
+    </div>
   </div>
 </template>

@@ -6,6 +6,24 @@ export class TodoListEntry {
 
   constructor() {
     this.editing = false
-    console.log('created todo list entry:', this)
+    this.updatedTaskText = ''
+  }
+
+  attached() {
+    this.updatedTaskText = this.todoitem.task
+  }
+
+  toggleEditing() {
+    this.updatedTaskText = this.todoitem.task
+    this.editing = !this.editing
+  }
+
+  updateTask() {
+    this.todoitem.task = this.updatedTaskText
+    this.toggleEditing()
+  }
+
+  noVolatileUpdates() {
+    return this.todoitem.task === this.updatedTaskText
   }
 }
