@@ -28,7 +28,14 @@ export class TodoListEntry {
   }
 
   toggleDone(e) {
-    e.stopPropogation()
-    this.todoitem.done = !this.todoitem.done
+    if(e.stopPropogation) {
+      e.stopPropogation()
+      this.todoitem.done = !this.todoitem.done
+    }
+    
+  }
+
+  deleteTodoItem() {
+    console.log(`deleting todo item ${this.todoitem.id}`)
   }
 }
