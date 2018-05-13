@@ -1,6 +1,9 @@
 <template>
-  <div hidden.bind="editing" click.delegate="toggleEditing()">
-    <p class="uk-text-primary">${todoitem.task}</p>
+  <require from="./todo-list-entry.css"></require>
+  <div hidden.bind="editing" click.delegate="toggleDone($event)">
+      <label><input class="uk-checkbox" type="checkbox" checked.bind="todoitem.done">&nbsp;&nbsp;
+        <span class="${todoitem.done ? 'done uk-text-muted' : ''} task-text">${todoitem.task}</span>
+      </label>
   </div>
   <div show.bind="editing" class="" uk-grid>
     <div class="uk-width-5-6">

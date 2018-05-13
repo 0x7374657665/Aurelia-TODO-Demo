@@ -26,4 +26,9 @@ export class TodoListEntry {
   noVolatileUpdates() {
     return this.todoitem.task === this.updatedTaskText
   }
+
+  toggleDone(e) {
+    e.stopPropogation()
+    this.todoitem.done = !this.todoitem.done
+  }
 }
