@@ -2,9 +2,8 @@
   <require from="./todo-list-entry.css"></require>
   <div if.bind="!editing" uk-grid>
     <div class="uk-width-5-6">
-        <label><input class="uk-checkbox" type="checkbox" checked.bind="todoitem.done" click.delegate="toggleDone()">&nbsp;&nbsp;
-          <a class="${todoitem.done ? 'done uk-text-muted' : ''} task-text" click.delegate="toggleDone()">${todoitem.task}</a>
-        </label>
+        <i uk-icon="check" css="visibility: ${todoitem.done ? 'visible':'hidden'}"></i>
+        <a class="${todoitem.done ? 'done uk-text-muted' : ''} task-text" click.delegate="toggleDone()">${todoitem.task}</a>
     </div>
     <div class="uk-width-1-6">
       <div uk-grid>

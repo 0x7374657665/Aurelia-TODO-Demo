@@ -30,7 +30,6 @@ export class TodoListEntry {
 
   toggleDone() {
     this.todoitem.done = !this.todoitem.done
-    return true
   }
 
   deleteTodoItem() {
