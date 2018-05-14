@@ -1,19 +1,18 @@
 <template>
   <require from="./todo-list-entry.css"></require>
-  <div if.bind="!editing" click.delegate="toggleDone($event)" uk-grid>
+  <div if.bind="!editing" uk-grid>
     <div class="uk-width-5-6">
-        <label><input class="uk-checkbox" type="checkbox" checked.bind="todoitem.done">&nbsp;&nbsp;
-          <span class="${todoitem.done ? 'done uk-text-muted' : ''} task-text">${todoitem.task}</span>
+        <label><input class="uk-checkbox" type="checkbox" checked.bind="todoitem.done" click.delegate="toggleDone()">&nbsp;&nbsp;
+          <a class="${todoitem.done ? 'done uk-text-muted' : ''} task-text" click.delegate="toggleDone()">${todoitem.task}</a>
         </label>
     </div>
     <div class="uk-width-1-6">
       <div uk-grid>
         <div class="uk-width-4-6"><!--empty spacer--></div>
-        <div class="uk-width-1-6"><a uk-icon="pencil" click.delegate="toggleEditing()"></a></div>
-        <div class="uk-width-1-6"><a uk-icon="trash" click.delegate="deleteTodoItem()"></a></div>
+        <div class="uk-width-1-6 uk-float-right"><a uk-icon="pencil" click.delegate="toggleEditing()"></a></div>
+        <div class="uk-width-1-6 uk-float-right"><a uk-icon="trash" click.delegate="deleteTodoItem()"></a></div>
       </div>
     </div>
-    
   </div>
 
   <div if.bind="editing" class="" uk-grid>

@@ -11,6 +11,7 @@ export class TodoListEntry {
 
   attached() {
     this.updatedTaskText = this.todoitem.task
+    console.log('added todo item:',this.todoitem)
   }
 
   toggleEditing() {
@@ -27,12 +28,9 @@ export class TodoListEntry {
     return this.todoitem.task === this.updatedTaskText
   }
 
-  toggleDone(e) {
-    if(e.stopPropogation) {
-      e.stopPropogation()
-      this.todoitem.done = !this.todoitem.done
-    }
-    
+  toggleDone() {
+    this.todoitem.done = !this.todoitem.done
+    return true
   }
 
   deleteTodoItem() {
