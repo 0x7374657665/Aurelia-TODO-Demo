@@ -14,4 +14,9 @@ export class Todo {
     item.parentTodoId = this.id
     this.todoItems.push(item)
   }
+
+  removeItem(targetItem) {
+    const index = this.todoItems.findIndex(item => item.id === targetItem.id)
+    this.todoItems.splice(index,1)
+  }
 }

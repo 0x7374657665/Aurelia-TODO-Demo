@@ -1,17 +1,20 @@
 import { bindable } from "aurelia-templating";
+import { inject } from "aurelia-dependency-injection";
+import { EventAggregator } from "aurelia-event-aggregator";
 
+@inject(EventAggregator)
 export class TodoListEntry {
 
   @bindable todoitem
 
-  constructor() {
+  constructor(events) {
     this.editing = false
     this.updatedTaskText = ''
+    this.events = events
   }
 
   attached() {
     this.updatedTaskText = this.todoitem.task
-    console.log('added todo item:',this.todoitem)
   }
 
   toggleEditing() {
@@ -33,6 +36,6 @@ export class TodoListEntry {
   }
 
   deleteTodoItem() {
-    console.log(`deleting todo item ${this.todoitem.id}`)
+    this.events.publish('todo:items:delete',this.todoitem)
   }
 }
